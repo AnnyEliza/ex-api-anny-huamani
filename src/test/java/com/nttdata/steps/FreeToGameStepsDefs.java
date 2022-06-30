@@ -17,6 +17,7 @@ public class FreeToGameStepsDefs {
     @When("consultar plarform {string}, category {string}")
     public void consultarPlarformCategory(String plarform, String category) {
         freeToGame.consultaFreeToGame(plarform, category);
+        System.out.println("VERR AQUII" + plarform + category);
     }
 
     @Then("el codigo de respuesta es {int}")
@@ -26,4 +27,8 @@ public class FreeToGameStepsDefs {
         System.out.println("title: " + SerenityRest.lastResponse().body().path("title").toString());
     }
 
+    @Then("el codigo de respuesta de error es {int}")
+    public void elCodigoDeRespuestaDeErrorEs(int statusCode) {
+        restAssuredThat(response -> response.statusCode(statusCode));
+    }
 }

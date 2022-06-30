@@ -9,5 +9,5 @@ Feature: Examen Anny Huamani Zapata
   @Anny2
   Scenario: Validar status 404
 
-    When consultar plarform "pc", category ""
-    Then el codigo de respuesta es 404
+    When consultar plarform "pc", category "123"
+    Then el codigo de respuesta de error es 404

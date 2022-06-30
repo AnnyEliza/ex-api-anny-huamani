@@ -10,7 +10,7 @@ public class FreeToGame {
         SerenityRest.given()
                 .pathParam("plarform", plarform)
                 .pathParam("category", category)
-                .when().get("https://www.freetogame.com/api/games?{plarform}&{category}");
+                .when().get("https://www.freetogame.com/api/games?plarform={plarform}&category={category}");
     }
 
 }
